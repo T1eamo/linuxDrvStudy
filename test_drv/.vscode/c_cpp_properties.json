@@ -1,0 +1,19 @@
+{
+    "configurations": [
+        {
+            "name": "Linux",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "/home/yu/Documents/rk3568/rk3568_sdk/kernel/arch/arm64/include",
+                "/home/yu/Documents/rk3568/rk3568_sdk/kernel/include",
+                "/home/yu/Documents/rk3568/rk3568_sdkinux_sdk/kernel/arch/arm64/include/generated"
+            ],
+            "defines": [],
+            "compilerPath": "/usr/bin/gcc",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64"
+        }
+    ],
+    "version": 4
+}
