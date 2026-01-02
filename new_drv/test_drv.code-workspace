@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"files.associations": {
+			"miscdevice.h": "c",
+			"fs.h": "c",
+			"module.h": "c"
+		}
+	}
+}
