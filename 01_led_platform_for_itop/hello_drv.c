@@ -22,8 +22,8 @@
 
 #define NEWCHRLED_CNT 1 /* 设备号个数 */
 #define NEWCHRLED_NAME "newchrled" /* 名字 */
- #define LEDOFF 0 /* 关灯 */
-#define LEDON 1 /* 开灯 */
+ #define LEDOFF '0' /* 关灯 */
+#define LEDON '1' /* 开灯 */
 
 
 /*设备结构体*/
@@ -60,12 +60,17 @@ static ssize_t led_write (struct file *file, const char __user *buf, size_t size
 {
 		unsigned int ret;
 		unsigned char databuf[1];
-		ret =copy_from_user(databuf,buf,size);
+		ret =copy_from_user(databuf,buf,1);
 		if(ret < 0){
 			printk("open error");
+
 			return -EFAULT;
 		}
-
+		if(databuf[0] == '1'){
+			gpio_set_value(newchrled.gpio_led, 1);
+		}else{
+			gpio_set_value(newchrled.gpio_led, 0);
+		}
 		return 0;
 
 }
@@ -186,8 +191,7 @@ free_gpio:
 }
 
 static int led_remove(struct platform_device *dev){
-
-
+	
 	/* 清理：按注册顺序逆序释放 */
 	/* free GPIO if it was requested */
 	if (newchrled.gpio_led >= 0)
@@ -204,7 +208,7 @@ static int led_remove(struct platform_device *dev){
 
 
 struct of_device_id led_of_match[] = {//这是一个数组，里面可以有多个匹配函数，只要有一项匹配就可以
-	{.compatible = "gpio-leds"}, //匹配函数   
+	{.compatible = "topeet,leds"}, //匹配函数   
 	{/* sentinel */},           //结尾要有这个标志
 };
 struct platform_driver led_driver = {   

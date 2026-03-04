@@ -126,7 +126,7 @@ static int led_probe(struct platform_device *dev){
 	}
 	printk("the gpio id is %d",gpio_stru.gpio_led);
 	//申请gpio
-	ret = gpio_request(gpio_stru.gpio_led,"gpio_led");
+	ret = gpio_request(gpio_stru.gpio_led,"gpio_led");//第二个参数是标签名字，自己定义
 	if(ret){
 		printk("fail to request\r\n");
 		return -1;
@@ -159,6 +159,7 @@ struct platform_driver led_driver = {
 	.remove = led_remove,
 
 };
+
 //4.定义入口函数，用来注册驱动程序
 static int __init led_init(void)
 {   
