@@ -1,0 +1,1 @@
+cmd_/home/yu/Project/linuxDrvStudy/IMU_IIO_drv/mpu6050_drv.ko := aarch64-linux-gnu-ld -r  -EL  -maarch64elf -T ./scripts/module-common.lds -T ./arch/arm64/kernel/module.lds  --build-id  -o /home/yu/Project/linuxDrvStudy/IMU_IIO_drv/mpu6050_drv.ko /home/yu/Project/linuxDrvStudy/IMU_IIO_drv/mpu6050_drv.o /home/yu/Project/linuxDrvStudy/IMU_IIO_drv/mpu6050_drv.mod.o ;  true
