@@ -103,6 +103,8 @@ int main(int argc, char **argv)
 
         // 因为 IIO read 根据 Trigger 的频率自动阻塞，所以这里不需要强行 usleep 了
         // 如果想降低打印频率，可以用计数器跳过几帧再打印
+
+
     }
 
     close(fd);

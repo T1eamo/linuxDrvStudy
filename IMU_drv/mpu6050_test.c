@@ -116,7 +116,7 @@ int main(int argc, char **argv)
         // printf("\033[H\033[J"); 
 
         printf("raw_accel: [%.4f, %.4f, %.4f] g\n", ax, ay, az);
-        printf("raw_gyro:  [%.4f, %.4f, %.4f] rad/s\n", gx, gy, gz);
+        printf("raw_gyro:  [%.4f, %.4f, %.4f] rad/s\n", gx, gy, gz);   //绕x轴、绕y轴、绕z轴的角速度
         printf("raw_mag:   [%.4f, %.4f, %.4f] uT\n", mx, my, mz);
         printf("rpy:       [%.4f, %.4f, %.4f] deg\n", roll, pitch, yaw);
         printf("quat:      [%.4f, %.4f, %.4f, %.4f]\n", q0, q1, q2, q3);

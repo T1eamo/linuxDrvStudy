@@ -1,5 +1,3 @@
-
-/* 假设你的头文件包含了各个寄存器地址和 SCAN_INDEX 宏 */
 #include "mpu6050_drv.h"
 
 #define MPU6050_NAME "mpu6050"
